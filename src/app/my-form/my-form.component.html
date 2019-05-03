@@ -1,0 +1,27 @@
+<form [formGroup]="form">
+    <div>
+      Name : <input formControlName="name">
+      <span style="color: red;" *ngIf="form.get('postalAddress').errors?.required">Name is required</span>
+    </div>
+    <div>
+      Email : <input formControlName="email">
+      <span style="color: red;" *ngIf="form.get('email').errors?.required">Email is required</span>
+    </div>
+    <div>
+      Postal Address : <input formControlName="postalAddress">
+      <span style="color: red;" *ngIf="form.get('postalAddress').errors?.required">Postal Address is required</span>
+      <span style="color: red;" *ngIf="form.get('postalAddress').errors?.maxlength">Postal Address should be at maximum at  500 characters</span>
+    </div>
+    <div>
+      Comment : <input formControlName="comment">
+    </div>
+    <button [disabled]="form.invalid" (click)="submitForm()">Submit</button>
+</form>
+ 
+ <p>
+  Form Data Below
+ </p>
+ <code>
+  {{form.value | json}}
+ </code>
+ 

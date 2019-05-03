@@ -1,0 +1,7 @@
+.image{
+    height:40em; 
+    background-size:cover;
+    width:auto;
+    background-image:url('/assets/backgroud_images.jpeg');
+    background-position:50% 50%;
+}
